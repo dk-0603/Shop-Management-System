@@ -8,7 +8,7 @@ html body{
 }
 #top   {
 
-    background-color: #609966;
+    background-color: #4F6F52;
     height: 50%;
     width: 100%;
 }
@@ -18,26 +18,33 @@ html body{
     width: 100%;
 }
 
-.container{
+.login-container{
     background-color: #fff; /* Box background color */
-    width: 80%;
-    height: 50%;
-  
+    width: 70%;
+    height: 70%;
+    min-height: 300px;
+    min-width: 280px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     display: flex;
+    border-radius: 5px;
+    padding: 10px;
+
 }
-.login {
-    background-color: blue;
-    width: 50%;
-    
-}
+
+
 .thumbnail{
-    background-color: red;
-    width: 50%;
+    
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thumbnail img{
+    width: 100%;
 }
 label {
     display: block;
@@ -65,8 +72,27 @@ button {
 button:hover {
     background-color: #2980b9;
 }
-.form-container{
-    padding: 6vw;
+
+.login {
+ 
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+.login h1{
+    padding-bottom: 20px;
+}
+
+.login-form{
+    /* padding-left: 6vw;
+    padding-right: 6vw; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
 }
 
 @media (max-width: 768px) {
@@ -78,14 +104,41 @@ button:hover {
         min-width: 200px;
     }
     .form-container{
-        padding: 3vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
     }
 }
 
 @media (max-width: 992px){
 .form-container{
-    padding: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 }
- 
+.login-misc{
+    display: flex;
+    justify-content: space-between;
+} 
+
+.login a {
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 0.8rem;  
+    color: var(--black-500);    
+}
+
+.name-surname{
+    display: flex;
+    justify-content: space-between;
+  
+}   
+
+#firstname{
+    width: 49%;
+
+}
+
+#lastname{
+    width: 49%;
+}

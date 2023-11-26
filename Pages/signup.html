@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../Styles/login.css">
     <link rel="stylesheet" type="text/css" href="../Assets/css/styles.css">
-    <script src="../Scripts/loginvalidation.js" ></script>
 </head>
 <body>
     <div class="background">
@@ -17,23 +16,29 @@
         <img src="../Assets/images/login_image.png" alt="Login image">
     </div>
     <div class="login">
-        <h1>Member login</h1>
+        <h1>Create an Account</h1>
    
-            <form class="login-form" id="login-form" action="#" method="post" novalidate>
-                
-                <input type="text" id="username" name="username" placeholder="Username or Email" required>
-                <div class="error"></div>
-    
-              
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <div class="error"></div>
-    
-                <button type="submit">Log In</button>
+            <form class="login-form" action="#" method="post" novalidate>
 
-                <div class="login-misc">
-                    <a href="signup.html"  style="font-weight: bold;">Register</a>
-                    <a href="#">Forgot passowrd</a>
+                <div class="name-surname">
+                    <input  type="text" id="firstname" name="firstname" placeholder="Name" required>
+                    <input   type="text" id="lastname" name="lastname" placeholder="Surname" required>
                 </div>
+                
+                <input type="email" id="email" name="email" placeholder="Email" required>
+
+         
+                <input type="password" id="password" name="password" placeholder="Password" required>
+
+     
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+    
+                <button type="submit">Submit</button>
+                <div class="login-misc">
+                    <a href="#">Already have an account?</a>
+                    <a href="login.html" style="font-weight: bold;">Login</a> 
+                </div>
+          
             </form>
      
             
