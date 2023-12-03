@@ -142,3 +142,8 @@ button:hover {
 #lastname{
     width: 49%;
 }
+
+.error{
+    color: red;
+    font-size: 0.8rem;
+}
