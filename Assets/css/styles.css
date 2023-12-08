@@ -92,3 +92,9 @@ footer{
     height: 10vh;
     background-color: #4F6F52;
 }
+
+.content{
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+}

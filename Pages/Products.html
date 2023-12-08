@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaShoes</title>
+    <link rel="stylesheet" type="text/css" href="../Assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/controlSection.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/table.css">
+</head>
+<body>
+    <header>
+        <img src="../Assets/images/logo.png" alt="Login image">
+    </header>
+    <div class="main-container">
+        <div class="sidebar">
+            <ul class="navlist">
+                <li><a href="../Pages/gallery.html">Gallery</a></li>
+                <li><a href="../Pages/Products.html">Products</a></li>
+                <li><a href="../Pages/Clients.html">Clients</a></li>
+                <li><a href="../Pages/Suppliers.html">Suppliers</a></li>
+                <li><a href="../Pages/Sales.html">Sales</a></li>
+                <li><a href="../Pages/Shipments.html">Shipments</a></li>
+                <li><a href="../Pages/Inventory.html">Inventory</a></li>
+            </ul>
+         
+        </div>
+        <div class="container">
+            <div class="control-buttons">
+                <button id="addBtn">ADD</button>
+                <form class="searchbar">
+                    <input type="search" id="search" name="search" placeholder="Search product">
+                    <button type="submit">Search</button>
+                  </form>
+            </div>
+            <div class="content">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Color</th>
+                        <th>Size</th>
+                        <th>Type</th>
+                        <th>Style</th>
+                        <th>Brand</th>
+                        <th>Supplier</th>
+                        <th class="actions">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Product 1</td>
+                        <td>Name 1</td>
+                        <td>$29.99</td>
+                        <td>Blue</td>
+                        <td>Medium</td>
+                        <td>Electronics</td>
+                        <td>Modern</td>
+                        <td>Brand A</td>
+                        <td>Supplier 1</td>
+                        <td class="actions">
+                          <!-- <button class="btn btn-read">Read</button> -->
+                          <button class="btn btn-update">Update</button>
+                          <button class="btn btn-delete">Delete</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Product 1</td>
+                        <td>Name 1</td>
+                        <td>$29.99</td>
+                        <td>Blue</td>
+                        <td>Medium</td>
+                        <td>Electronics</td>
+                        <td>Modern</td>
+                        <td>Brand A</td>
+                        <td>Supplier 1</td>
+                        <td class="actions">
+                          <!-- <button class="btn btn-read">Read</button> -->
+                          <button class="btn btn-update">Update</button>
+                          <button class="btn btn-delete">Delete</button>
+                        </td>
+                      </tr>
+                      <!-- Add more data rows with buttons as needed -->
+                    </tbody>
+                  </table>
+            </div>
+
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>
+

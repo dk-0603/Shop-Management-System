@@ -1,0 +1,51 @@
+ 
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .actions {
+    white-space: nowrap; /* Prevent button wrapping */
+  }
+
+  .btn {
+   padding: 5px 10px;
+   margin: 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-create {
+    background-color: #4caf50;
+    color: #fff;
+  }
+
+  .btn-read {
+    background-color: #2196f3;
+    color: #fff;
+  }
+
+  .btn-update {
+    background-color: #ffc107;
+    color: #333;
+  }
+
+  .btn-delete {
+    background-color: #f44336;
+    color: #fff;
+  }
