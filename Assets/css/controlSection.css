@@ -1,4 +1,4 @@
-#addBtn {
+#addButton {
     padding: 8px 12px;
     margin-left: 2rem;
     background-color: #4caf50;
@@ -10,7 +10,7 @@
     width: 7rem;
   }
 
-  #addBtn:hover {
+  #addButton:hover {
     background-color: #285429;
   }
 

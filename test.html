@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Assets/css/insertmenu.css">
+  <title>Your Website</title>
+</head>
+<body>
+
+  <button id="addButton">Add Product</button>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="productForm">
+        <!-- Add your input fields for product details here -->
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required>
+
+        <label for="productPrice">Product Price:</label>
+        <input type="number" id="productPrice" name="productPrice" required>
+
+        <!-- Add more input fields as needed -->
+
+        <button type="submit">Insert Product</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/Assets/js/insertmenu.js"></script>
+</body>
+</html>
