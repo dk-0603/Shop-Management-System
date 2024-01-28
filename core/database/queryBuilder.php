@@ -134,53 +134,63 @@ class QueryBuilder {
 }
 
 
+public function products() {
+    return new ProductDB($this->pdo);
+}
 
-    public function addProduct(Product $product)
-    {
-        $stmt = $this->pdo->prepare("INSERT INTO Products (product_name, brand, category, size, color, price, quantity_in_stock, supplier, date_added) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$product->getName(), $product->getBrand(), $product->getCategory(), $product->getSize(), $product->getColor(), $product->getPrice(), $product->getQuantityInStock(), $product->getSupplier(), $product->getDateAdded()]);
-        $stmt->closeCursor(); // Close the cursor to enable the next query
-    }
+
+
+
+
+
+    // public function addProduct(Product $product)
+    // {
+    //     $stmt = $this->pdo->prepare("INSERT INTO Products (product_name, brand, category, size, color, price, quantity_in_stock, supplier, date_added) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    //     $stmt->execute([$product->getName(), $product->getBrand(), $product->getCategory(), $product->getSize(), $product->getColor(), $product->getPrice(), $product->getQuantityInStock(), $product->getSupplier(), $product->getDateAdded()]);
+    //     $stmt->closeCursor(); // Close the cursor to enable the next query
+    // }
     
-    public function updateProduct(Product $product)
-    {
-        $stmt = $this->pdo->prepare("UPDATE Products SET product_name=?, brand=?, category=?, size=?, color=?, price=?, quantity_in_stock=?, supplier=?, date_added=? WHERE product_id=?");
-        $stmt->execute([$product->getName(), $product->getBrand(), $product->getCategory(), $product->getSize(), $product->getColor(), $product->getPrice(), $product->getQuantityInStock(), $product->getSupplier(), $product->getDateAdded(), $product->getId()]);
-        $stmt->closeCursor(); // Close the cursor to enable the next query
-    }
+    // public function updateProduct(Product $product)
+    // {
+    //     $stmt = $this->pdo->prepare("UPDATE Products SET product_name=?, brand=?, category=?, size=?, color=?, price=?, quantity_in_stock=?, supplier=?, date_added=? WHERE product_id=?");
+    //     $stmt->execute([$product->getName(), $product->getBrand(), $product->getCategory(), $product->getSize(), $product->getColor(), $product->getPrice(), $product->getQuantityInStock(), $product->getSupplier(), $product->getDateAdded(), $product->getId()]);
+    //     $stmt->closeCursor(); // Close the cursor to enable the next query
+    // }
     
-    public function deleteProduct(Product $product)
-    {
-        $stmt = $this->pdo->prepare("DELETE FROM Products WHERE product_id=?");
-        $stmt->execute([$product->getId()]);
-        $stmt->closeCursor(); // Close the cursor to enable the next query
-    }
+    // public function deleteProduct(Product $product)
+    // {
+    //     $stmt = $this->pdo->prepare("DELETE FROM Products WHERE product_id=?");
+    //     $stmt->execute([$product->getId()]);
+    //     $stmt->closeCursor(); // Close the cursor to enable the next query
+    // }
     
-    public function getProductById($productId)
-    {
-        $stmt = $this->pdo->prepare("SELECT * FROM Products WHERE product_id=?");
-        $stmt->execute([$productId]);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        $stmt->closeCursor(); // Close the cursor to enable the next query
+    // public function getProductById($productId)
+    // {
+    //     $stmt = $this->pdo->prepare("SELECT * FROM Products WHERE product_id=?");
+    //     $stmt->execute([$productId]);
+    //     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    //     $stmt->closeCursor(); // Close the cursor to enable the next query
     
-        if ($result) {
-            return new Product($result['product_name'], $result['brand'], $result['category'], $result['size'], $result['color'], $result['price'], $result['quantity_in_stock'], $result['supplier'], $result['date_added']);
-        } else {
-            return null;
-        }
-    }
+    //     if ($result) {
+    //         return new Product($result['product_name'], $result['brand'], $result['category'], $result['size'], $result['color'], $result['price'], $result['quantity_in_stock'], $result['supplier'], $result['date_added']);
+    //     } else {
+    //         return null;
+    //     }
+    // }
     
-    public function getAllProducts()
-    {
-        $result = $this->pdo->query("SELECT * FROM Products");
-        $products = [];
+    // public function getAllProducts()
+    // {
+    //     $result = $this->pdo->query("SELECT * FROM Products");
+    //     $products = [];
     
-        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $products[] = new Product($row['product_name'], $row['brand'], $row['category'], $row['size'], $row['color'], $row['price'], $row['quantity_in_stock'], $row['supplier'], $row['date_added']);
-        }
+    //     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    //         $products[] = new Product($row['product_name'], $row['brand'], $row['category'], $row['size'], $row['color'], $row['price'], $row['quantity_in_stock'], $row['supplier'], $row['date_added']);
+    //     }
     
-        return $products;
-    }
+    //     return $products;
+    // }
+    
+
     
 
 

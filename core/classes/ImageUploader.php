@@ -2,14 +2,13 @@
 
 class ImageUploader {
     private $uploadDirectory;
-    private $database;
+    private $uploadedImagePaths = [];
 
-    public function __construct($uploadDirectory,$database) {
+    public function __construct($uploadDirectory) {
         $this->uploadDirectory = $uploadDirectory;
-        $this->database = $database;
     }
 
-    public function processUpload() {
+    public function processMultipleUpload() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->handlePostRequest();
         } else {
@@ -18,34 +17,33 @@ class ImageUploader {
     }
 
     private function handlePostRequest() {
-        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-            $fileName = uniqid() . '_' . basename($_FILES['image']['name']);
-            $targetPath = $this->uploadDirectory . $fileName;
+        if (!empty($_FILES['images']['name'][0])) {
+            foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
+                $fileName = uniqid() . '_' . basename($_FILES['images']['name'][$key]);
+                $targetPath = $this->uploadDirectory . $fileName;
 
-            if ($this->moveUploadedFile($targetPath)) {
-                $this->insertImagePathIntoDatabase($targetPath);
-            } else {
-                echo "Error uploading image.";
+                if ($this->moveUploadedFile($tmp_name, $targetPath)) {
+                    $this->uploadedImagePaths[] = $targetPath;
+                } else {
+                    echo "Error uploading image.";
+                }
             }
+
+            $_SESSION['uploaded_image_paths'] = $this->uploadedImagePaths;
         } else {
-            echo "Please select an image to upload.";
+            echo "Please select at least one image to upload.";
         }
     }
 
-    private function moveUploadedFile($targetPath) {
-        return move_uploaded_file($_FILES['image']['tmp_name'], $targetPath);
+    private function moveUploadedFile($tmp_name, $targetPath) {
+        return move_uploaded_file($tmp_name, $targetPath);
     }
-
-    private function insertImagePathIntoDatabase($targetPath) {
-        if ($this->database->insertImagePath($targetPath)) {
-            $_SESSION['image_upload_success'] = true;
-        } else {
-            $_SESSION['image_upload_error'] = "Error inserting image path into the database.";
-        }
-    }
-    
 
     private function displayForm() {
-        header("location:/uploadfunction.php");
+        return;
+    }
+
+    public function getUploadedImagePaths() {
+        return $this->uploadedImagePaths;
     }
 }

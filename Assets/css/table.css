@@ -19,6 +19,7 @@
 
   .actions {
     white-space: nowrap; /* Prevent button wrapping */
+    display: flex;
   }
 
   .btn {

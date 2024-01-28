@@ -21,8 +21,8 @@
     <div class="modal-content">
       <span class="close">&times;</span>
 
-<form id="productForm"  action="/insertproduct" method="post" enctype="multipart/form-data">
-      <label for="productName">Product Name:</label>
+<form id="productForm" action="/insertproduct" method="post" enctype="multipart/form-data">
+    <label for="productName">Product Name:</label>
     <input type="text" id="productName" name="productName" required><br>
 
     <label for="brand">Brand:</label>
@@ -49,11 +49,11 @@
     <label for="dateAdded">Date Added:</label>
     <input type="date" id="dateAdded" name="dateAdded"><br>
     
-    <label for="productImage">Product Image:</label>
-    <input type="file" name="image" id="image" accept="image/*" required>
-
+    <label for="productImage">Product Images:</label>
+    <input type="file" name="images[]" id="images" accept="image/*" multiple required>
 
     <input type="submit" value="Add Product">
+    
 </form>
     </div>
   </div>
@@ -64,6 +64,7 @@
                 <table>
                     <thead>
                       <tr>
+                      <th>ID</th>
                       <th>Product Name</th>
                       <th>Brand</th>
                       <th>Category</th>
@@ -81,6 +82,7 @@
             // Assuming $products is an array containing Product objects fetched from the database
             foreach ($products as $product) {
                 echo "<tr>";
+                echo "<td>" . htmlspecialchars($product->getId()) . "</td>";
                 echo "<td>" . htmlspecialchars($product->getName()) . "</td>";
                 echo "<td>" . htmlspecialchars($product->getBrand()) . "</td>";
                 echo "<td>" . htmlspecialchars($product->getCategory()) . "</td>";
@@ -91,10 +93,16 @@
                 echo "<td>" . htmlspecialchars($product->getSupplier()) . "</td>";
                 echo "<td>" . htmlspecialchars($product->getDateAdded()) . "</td>";
                 echo '<td class="actions">
-                <button class="btn btn-update">Update</button>
-                <button class="btn btn-delete">Delete</button>
+                <form method="post" action="/update-product/' . $product->getId() . '">
+                    <button type="submit" class="btn btn-update">Update</button>
+                </form>
+                <form method="post" action="/delete-product" onsubmit="return confirmDelete()">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="productId" value="' . $product->getId() . '">
+                <button type="submit" class="btn btn-delete">Delete</button>
+            </form>
               </td>';
-                echo "</tr>";
+        
             }
             ?>
 

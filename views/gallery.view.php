@@ -15,7 +15,7 @@
 
                 <?php foreach ($images as $image) : ?>
                     <div class="card">
-                        <img src='../<?php echo $image->url ?>'>
+                        <img src='../<?php echo $image->image_path ?>'>
                         <h2>Alexa beige</h2>
                     </div>
     
