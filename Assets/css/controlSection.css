@@ -24,7 +24,7 @@
 
   .searchbar {
     display: flex;
- 
+
     margin-right: 2rem;
   }
 
@@ -48,3 +48,7 @@
   .searchbar button[type="submit"]:hover {
     background-color: #007bb5;
   }
+
+  #searchBtn {
+    height: 2.1rem;
+}

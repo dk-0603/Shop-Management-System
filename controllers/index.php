@@ -1,25 +1,18 @@
 <?php
 
-$users = $app['database']->selectAll('users');
- 
-
+// Assuming you have access to $app instance
 
 session_start();
 
-// $loginError = $_SESSION['loginError'];
-
-// $error = $_SESSION['error'];
+$loginError = isset($_SESSION['loginError']) ? $_SESSION['loginError'] : null;
+$error = isset($_SESSION['error']) ? $_SESSION['error'] : null;
 
 unset($_SESSION['loginError']);
+unset($_SESSION['error']);
 
-unset($_SESSION["error"]);
+$users = $app['database']->selectAll('users');
+$images = $app['database']->selectAll('images');
 
-if(!isset($_SESSION['email']))  {
-    require 'views/loginForm.view.php';
-}  
-else{
-    require 'views/index.view.php';
-}
+require 'views/index.view.php';
 
 
- 

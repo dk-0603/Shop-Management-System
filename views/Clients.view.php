@@ -1,9 +1,7 @@
 <?php    require  'partials/head.php'?>
+<?php    require  'partials/header.php'?>
 
 
-    <header>
-        <img src="../Assets/images/logo.png" alt="Login image">
-    </header>
     <div class="main-container">
 <?php    require  'partials/sidebar.php'?>   
         <div class="container">

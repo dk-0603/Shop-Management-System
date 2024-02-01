@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../Assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="../Assets/css/carousel.css">
     <link rel="stylesheet" type="text/css" href="../Assets/css/table.css">
-    <link rel="stylesheet" type="text/css" href="/Assets/css/controlSection.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../Assets/css/controlSection.css">
     <link rel="stylesheet" href="/Assets/css/insertmenu.css">
     <script src="../../Assets/js/loginvalidation.js" defer></script>
     <script src="../Assets/js/carousel.js" defer></script>

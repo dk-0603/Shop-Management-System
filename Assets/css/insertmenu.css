@@ -9,7 +9,6 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -33,3 +32,18 @@
   
   /* Optional: Add styles for a close button if desired */
   
+
+
+        /* Add your CSS styles here for the modal
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            z-index: 1000;
+            border: 1px solid #ccc;
+            background-color: rgba(0, 0, 0, 0.4);
+        } */

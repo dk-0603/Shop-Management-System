@@ -12,6 +12,7 @@ $router->post('users', 'controllers/users/add-user.php');
 
 $router->post('login', 'controllers/users/login.php');
 
+
 $router->get('logout', 'controllers/users/logout.php');
 
 $router->get('products', 'controllers/products/products.php');
@@ -19,6 +20,7 @@ $router->get('products', 'controllers/products/products.php');
 $router->post('insertproduct', 'controllers/products/productInsert.php');
 
 $router->post('delete-product', 'controllers/products/productDelete.php');
+ 
+$router->post('delete-user', 'controllers/users/userDelete.php');
 
-
-
+$router->get('users', 'controllers/users/users.php');

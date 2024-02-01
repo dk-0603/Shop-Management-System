@@ -34,7 +34,7 @@
                         <button class="login-button" type="submit">Submit</button>
                         <div class="login-misc">
                             <a href="#">Already have an account?</a>
-                            <a href="/login" style="font-weight: bold;">Login</a> 
+                            <a href="/loginForm" style="font-weight: bold;">Login</a> 
                         </div>
                 
                     </form>

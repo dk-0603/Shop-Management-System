@@ -1,23 +1,51 @@
 <?php    require  'partials/head.php'?>
-    <header>
-        <img src="../Assets/images/logo.png" alt="Login image">
-        <?php if(isset($_SESSION['email'])) : ?> 
-            <a id='logout' href="logout">Logout</a>
+<?php    require  'partials/header.php'?>
+
+
+
+    <?php if(!isset($_SESSION['email'])) : ?> 
+            
+        <div class="cta-container">
+        <h1>Please log in or register to continue.</h1>
+       
+        <a href="/loginForm">Log In</a>
+        <a href="/register">Register</a>
+         </div>
         <?php endif; ?>
-    </header>
+
+
+        <?php if(isset($_SESSION['email'])) : ?> 
     <div class="main-container">
-<?php    require  'partials/sidebar.php'?>   
+        <?php    require  'partials/sidebar.php'?>   
         <div class="container">
-            <div class="control-buttons">
-                
+            <!-- <div class="control-buttons">
+
+            </div> -->
+            <div class="carousel">
+                <img class="carousel-button" id="backBtn" src="/Assets/images/back.png" alt="back">
+                <div class="content">
+
+                <?php foreach ($images as $image) : ?>
+                    <div class="card">
+                        <img src='../<?php echo $image->image_path ?>'>
+                        <h2>Alexa beige</h2>
+                    </div>
+    
+
+
+            <?php endforeach; ?> 
+         
+    
+                </div>
+                <img class="carousel-button" id="nextBtn" src="../Assets/images/next.png" alt="next">
             </div>
-            <div class="content">
-                
-            </div>
+           
 
         </div>
     </div>
+
     <footer></footer>
+    <?php endif; ?>
 </body>
 </html>
 

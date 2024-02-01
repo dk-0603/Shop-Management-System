@@ -7,6 +7,7 @@ class Product
     private $product_name;
     private $brand;
     private $category;
+    private $userid;
     private $size;
     private $color;
     private $price;
@@ -16,12 +17,13 @@ class Product
     private  $images;
 
     // Constructor to set initial values
-    public function __construct($product_id= null,$product_name, $brand, $category, $size, $color, $price, $quantity_in_stock, $supplier, $date_added,  Images $images)
+    public function __construct($product_id= null,$product_name, $brand, $category, $userid, $size, $color, $price, $quantity_in_stock, $supplier, $date_added,  Images $images)
     {   
         $this->product_id = $product_id;
         $this->product_name = $product_name;
         $this->brand = $brand;
         $this->category = $category;
+        $this->userid = $userid;
         $this->size = $size;
         $this->color = $color;
         $this->price = $price;
@@ -51,7 +53,10 @@ class Product
     {
         return $this->category;
     }
-
+    public function getUser()
+    {
+        return $this->userid;
+    }
     public function getSize()
     {
         return $this->size;
