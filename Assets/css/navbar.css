@@ -1,0 +1,86 @@
+/* Updated color palette */
+:root {
+    --main-color: #C5C5C5; /* Deep Sky Blue */
+    --secondary-color: #2C3E50; /* Emerald */
+}
+
+.sidebar {
+    width: 20vw;
+    background-color: var(--main-color);
+    color: #ecf0f1;
+    overflow-y: auto;
+}
+
+.navlist {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.navlist li {
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.navlist li:hover {
+    background-color: #2C3E50; /* Hover color: Emerald */
+}
+
+.navlist li:hover a {
+    background-color: #2C3E50; /* Hover color: Emerald */
+    color: #ecf0f1;
+}
+
+.navlist li a {
+    text-decoration: none;
+    color: #2C3E50;
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px;
+}
+
+/* Add icon styles if you have icons for each menu item */
+.navlist li i {
+    margin-right: 10px;
+}
+
+/* Hamburger button styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  
+    .sidebar.hide {
+        display: none;
+    }
+    .container {
+        width: 100%;
+    }
+
+
+    
+
+
+    .user-info{
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+    }
+
+
+    .navlist.show {
+        display: block;
+    }
+}
+
+
+
+
