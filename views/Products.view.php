@@ -8,7 +8,7 @@
 <div class="main-container">
 
   <?php require  'partials/sidebar.php' ?>
-  <div class="container">
+  <div class="container" id="container">
     <?php require  'partials/controlButtons.php' ?>
 
     <div id="myModal" class="modal">
@@ -71,10 +71,11 @@
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+
             <th>Product Name</th>
             <th>Brand</th>
             <th>Category</th>
+            <th>Creator</th>
             <th>Size</th>
             <th>Color</th>
             <th>Price</th>
@@ -90,10 +91,11 @@
           // Assuming $products is an array containing Product objects fetched from the database
           foreach ($products as $product) {
             echo "<tr>";
-            echo "<td>" . htmlspecialchars($product->getId()) . "</td>";
+
             echo "<td>" . htmlspecialchars($product->getName()) . "</td>";
             echo "<td>" . htmlspecialchars($product->getBrand()) . "</td>";
             echo "<td>" . htmlspecialchars($product->getCategory()) . "</td>";
+            echo "<td>" . htmlspecialchars($product->getUser()) . "</td>";
             echo "<td>" . htmlspecialchars($product->getSize()) . "</td>";
             echo "<td>" . htmlspecialchars($product->getColor()) . "</td>";
             echo "<td>" . htmlspecialchars($product->getPrice()) . "</td>";

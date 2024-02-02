@@ -43,5 +43,6 @@
         <div id="bottom"></div>
         </div>
     <?php endif; ?>
+    <script src="../../Assets/js/loginvalidation.js" defer></script>
 </body>
 </html>

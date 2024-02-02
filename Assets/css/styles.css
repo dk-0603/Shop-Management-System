@@ -39,15 +39,11 @@ header img {
     width: 80vw;
 }
 
-@media (max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
 
-    .container {
-        width: 100%;
-    }
-}
+
+/* @media (max-width: 768px) {
+
+} */
 
 /* Control buttons styles */
 .control-buttons {
@@ -119,4 +115,9 @@ footer {
 
 #logout:hover {
     background-color: #c0392b; /* Darker shade on hover */
+}
+
+
+.users-h1 {
+    padding: 1rem;
 }

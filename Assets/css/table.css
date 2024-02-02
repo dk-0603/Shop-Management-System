@@ -50,3 +50,13 @@
     background-color: #f44336;
     color: #fff;
   }
+
+
+  .btn-make-admin {
+    background-color: #187bcd; 
+    color: white;
+
+}
+  .btn-make-admin:hover {
+    background-color: #1167b1; 
+}

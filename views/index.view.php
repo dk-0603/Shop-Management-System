@@ -17,7 +17,7 @@
         <?php if(isset($_SESSION['email'])) : ?> 
     <div class="main-container">
         <?php    require  'partials/sidebar.php'?>   
-        <div class="container">
+        <div class="container" id="container">
             <!-- <div class="control-buttons">
 
             </div> -->
@@ -28,7 +28,7 @@
                 <?php foreach ($images as $image) : ?>
                     <div class="card">
                         <img src='../<?php echo $image->image_path ?>'>
-                        <h2>Alexa beige</h2>
+                    
                     </div>
     
 
@@ -43,7 +43,7 @@
 
         </div>
     </div>
-
+    <script src="../Assets/js/carousel.js" defer></script>
     <footer></footer>
     <?php endif; ?>
 </body>

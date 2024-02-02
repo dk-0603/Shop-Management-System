@@ -147,3 +147,23 @@ input {
     color: red;
     font-size: 0.8rem;
 }
+
+#passwordStrengthMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Style for empty field error message */
+.empty-field-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#confirmPassword {
+    margin-bottom: 0;
+}
+#passwordStrengthMessage{
+    margin-bottom: 20px;
+}

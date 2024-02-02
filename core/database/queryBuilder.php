@@ -39,6 +39,10 @@ class QueryBuilder
     }
 
 
+    public function clients()
+    {
+        return new ClientsDB($this->pdo);
+    }
 
 
 

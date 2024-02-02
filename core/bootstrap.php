@@ -9,14 +9,14 @@ require 'core/classes/Router.php';
 require 'core/classes/Request.php';
 
 require 'core/classes/ImageUploader.php';
-require 'core/classes/productController.php';
-require 'core/classes/userController.php';
 require 'core/classes/product.php';
 require 'core/classes/user.php';
+require 'core/classes/client.php';
 require 'core/classes/images.php';
 require 'core/database/connection.php';
 require 'core/database/dbClasses/productsDB.php';
 require 'core/database/dbClasses/usersDB.php';
+require 'core/database/dbClasses/clientsDB.php';
 require 'core/database/queryBuilder.php';
 
 $app['database'] = new QueryBuilder(
@@ -29,3 +29,5 @@ $app['product'] = $app['database']->products();
 
 
 $app['user'] = $app['database']->users();
+
+$app['client'] = $app['database']->clients();
